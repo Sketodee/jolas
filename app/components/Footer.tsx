@@ -9,25 +9,25 @@ interface NavigationItem {
 }
 
 const Footer = () => {
-    const navigationItems: NavigationItem[] = [
-  { title: "Home", url: ("/"), icon: GraduationCap },
-  { title: "About", url: ("/about"), icon: Heart },
-  { title: "Academics", url: ("/academics"), icon: BookOpen },
-  { title: "Admissions", url: ("/admissions"), icon: Users },
-  { title: "Gallery", url: ("/gallery"), icon: ImageIcon },
-  { title: "Contact", url: ("/contact"), icon: MessageCircle },
-];
+  const navigationItems: NavigationItem[] = [
+    { title: "Home", url: ("/"), icon: GraduationCap },
+    { title: "About", url: ("/about"), icon: Heart },
+    { title: "Academics", url: ("/academics"), icon: BookOpen },
+    { title: "Admissions", url: ("/admissions"), icon: Users },
+    { title: "Gallery", url: ("/gallery"), icon: ImageIcon },
+    { title: "Contact", url: ("/contact"), icon: MessageCircle },
+  ];
   return (
     <div>
-         <footer className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
+      <footer className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-400/10 to-purple-400/10"></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid lg:grid-cols-4 gap-12">
-            
+
             {/* School info with creative design */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-4 mb-8">
@@ -36,15 +36,15 @@ const Footer = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-black">Excellence Schools</h3>
-                  <p className="text-orange-300 font-semibold">Shaping Nigeria's Future</p>
+                  <p className="text-orange-300 font-semibold">Shaping Nigeria&apos;s Future</p>
                 </div>
               </div>
-              
+
               <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-lg">
-                For over 15 years, we've been nurturing young minds to become confident, 
+                For over 15 years, we&apos;ve been nurturing young minds to become confident,
                 capable leaders who will transform Nigeria and the world.
               </p>
-              
+
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
                   <MapPin className="w-5 h-5 text-orange-400 group-hover:scale-110 transition-transform" />
@@ -101,8 +101,8 @@ const Footer = () => {
           <div className="border-t border-gray-700 dark:border-gray-600 mt-12 pt-8">
             <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
               <p className="text-gray-400 dark:text-gray-500 text-center lg:text-left">
-                © 2024 Excellence Schools Lagos. All rights reserved. 
-                <span className="text-orange-300 dark:text-orange-400 font-semibold"> Building Nigeria's Future Since 2010.</span>
+                © 2024 Excellence Schools Lagos. All rights reserved.
+                <span className="text-orange-300 dark:text-orange-400 font-semibold"> Building Nigeria&apos;s Future Since 2010.</span>
               </p>
               <div className="flex items-center gap-2">
                 <Star className="w-4 h-4 text-yellow-400 dark:text-yellow-500 fill-current" />

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from "react";
+import Image from "next/image";
 import ContactInquiry, { ContactInquiryData, ContactInquiryResponse } from "../utils/ContactInquiry";
 import {
   Download,
@@ -78,7 +79,7 @@ const admissionSteps: AdmissionStep[] = [
   {
     step: 4,
     title: "Admission Decision",
-    description: "We'll notify you of the admission decision within 5-7 working days.",
+    description: "We&apos;ll notify you of the admission decision within 5-7 working days.",
     icon: CheckCircle,
     color: "purple"
   }
@@ -102,9 +103,9 @@ const fees: Fee[] = [
 ];
 
 // Custom Components
-const Button: React.FC<ButtonProps> = ({ 
-  children, 
-  className = '', 
+const Button: React.FC<ButtonProps> = ({
+  children,
+  className = '',
   size = 'default',
   variant = 'default',
   onClick,
@@ -112,7 +113,7 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button'
 }) => {
   const baseClasses = "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed";
-  
+
   const sizeClasses = {
     default: "px-6 py-3 text-base",
     lg: "px-8 py-4 text-lg"
@@ -124,7 +125,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <button 
+    <button
       type={type}
       onClick={onClick}
       disabled={disabled}
@@ -168,13 +169,13 @@ const Admissions: React.FC = () => {
         phone: formData.phone,
         inquiry_type: formData.inquiry_type,
         message: formData.message,
-        ...(formData.student_level && { 
-          student_level: formData.student_level as 'primary' | 'secondary' 
+        ...(formData.student_level && {
+          student_level: formData.student_level as 'primary' | 'secondary'
         })
       };
 
       const response: ContactInquiryResponse = await ContactInquiry.create(inquiryData);
-      
+
       if (response.success) {
         setIsSubmitted(true);
         setFormData({
@@ -386,9 +387,11 @@ const Admissions: React.FC = () => {
                 ))}
               </ul>
             </div>
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               alt="Student documents"
+              width={800}
+              height={600}
               className="rounded-2xl shadow-lg border border-white/20 dark:border-gray-700/30"
             />
           </div>
@@ -453,7 +456,7 @@ const Admissions: React.FC = () => {
             <div className="p-6 pb-0">
               <h3 className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-2">Quick Application Inquiry</h3>
               <p className="text-gray-600 dark:text-gray-400 text-center">
-                Submit your initial inquiry and we'll guide you through the complete admission process.
+                Submit your initial inquiry and we&apos;ll guide you through the complete admission process.
               </p>
             </div>
             <div className="p-8">
@@ -514,13 +517,13 @@ const Admissions: React.FC = () => {
                         className="w-full px-4 py-3 text-left border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent flex items-center justify-between"
                       >
                         <span className={formData.student_level ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400"}>
-                          {formData.student_level === "primary" ? "Primary School (Age 6-11)" : 
-                           formData.student_level === "secondary" ? "Secondary School (Age 12-17)" : 
-                           "Select student level"}
+                          {formData.student_level === "primary" ? "Primary School (Age 6-11)" :
+                            formData.student_level === "secondary" ? "Secondary School (Age 12-17)" :
+                              "Select student level"}
                         </span>
                         <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
                       </button>
-                      
+
                       {isDropdownOpen && (
                         <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xl shadow-lg z-10">
                           <button

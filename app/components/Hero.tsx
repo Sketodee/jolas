@@ -1,5 +1,6 @@
 import React from "react";
-import { ArrowRight, Star, Users, Award, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Users, Award, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 const Hero: React.FC = () => {
@@ -10,7 +11,7 @@ const Hero: React.FC = () => {
         <div className="absolute top-20 right-10 w-72 h-72 bg-blue-400/10 dark:bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-32 left-20 w-96 h-96 bg-orange-300/10 dark:bg-orange-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-green-200/10 dark:bg-green-600/20 rounded-full blur-3xl animate-pulse delay-500"></div>
-        
+
         {/* Floating elements */}
         <div className="absolute top-1/4 right-1/4 animate-bounce delay-1000">
           <div className="w-4 h-4 bg-blue-400 dark:bg-blue-500 rounded-full opacity-60"></div>
@@ -28,13 +29,13 @@ const Hero: React.FC = () => {
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
             {/* Left Content - offset and creative layout */}
             <div className="lg:col-span-7 pt-20 lg:pt-0">
-              
+
               {/* Badge with creative positioning */}
               <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 text-orange-700 dark:text-orange-400 px-5 py-3 rounded-full text-sm font-medium mb-8 shadow-lg transform -rotate-1">
                 <Award className="w-4 h-4" />
                 Leading Nigerian School Since 2010
               </div>
-              
+
               {/* Main heading with creative typography */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 dark:text-white mb-8 leading-[0.95] tracking-tight">
                 Where Young
@@ -45,14 +46,14 @@ const Hero: React.FC = () => {
                   in Lagos
                 </span>
               </h1>
-              
+
               <div className="relative">
                 <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl leading-relaxed">
-                  From nursery through secondary school, we're nurturing the next generation of 
-                  <span className="font-semibold text-blue-700 dark:text-blue-400"> brilliant Nigerian minds</span> through 
+                  From nursery through secondary school, we&apos;re nurturing the next generation of
+                  <span className="font-semibold text-blue-700 dark:text-blue-400"> brilliant Nigerian minds</span> through
                   innovative education and character building.
                 </p>
-                
+
                 {/* Creative underline */}
                 <div className="absolute -bottom-2 left-0 w-32 h-1 bg-gradient-to-r from-orange-400 dark:from-orange-500 to-transparent rounded-full"></div>
               </div>
@@ -60,7 +61,7 @@ const Hero: React.FC = () => {
               {/* Action buttons with creative layout */}
               <div className="flex flex-col sm:flex-row gap-4 mb-16">
                 <Link href={"Admissions"}>
-                  <button 
+                  <button
                     className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700 text-white shadow-xl group transform hover:scale-105 transition-all duration-200 px-8 py-4 text-lg"
                   >
                     Begin Your Journey
@@ -68,7 +69,7 @@ const Hero: React.FC = () => {
                   </button>
                 </Link>
                 <Link href={"Contact"}>
-                  <button 
+                  <button
                     className="border-2 border-gray-300 hover:border-blue-300 hover:bg-blue-50/50 dark:border-gray-600 dark:hover:border-blue-500 dark:hover:bg-blue-950/50 dark:text-gray-300 dark:hover:text-blue-400 backdrop-blur-sm px-8 py-4 text-lg"
                   >
                     Visit Our Campus
@@ -108,15 +109,18 @@ const Hero: React.FC = () => {
                 {/* Main image with organic shape */}
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-orange-400/20 dark:from-blue-600/30 dark:to-orange-600/30 rounded-[3rem] rotate-3 scale-105 blur-xl"></div>
-                  <img
-                    src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  <Image
+                    src="https://plus.unsplash.com/premium_photo-1682125773446-259ce64f9dd7?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Excellence Schools - Students Learning"
+                    width={800}
+                    height={600}
                     className="relative rounded-[3rem] w-full h-[600px] object-cover shadow-2xl dark:shadow-gray-900/50 transform -rotate-2 border border-white/20 dark:border-gray-700/30"
+                    priority
                   />
                   {/* Dark mode overlay for image */}
                   <div className="absolute inset-0 bg-gray-900/10 dark:bg-gray-900/20 rounded-[3rem] transform -rotate-2"></div>
                 </div>
-                
+
                 {/* Floating achievement card */}
                 <div className="absolute -bottom-8 -left-8 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-2xl dark:shadow-gray-900/50 border border-gray-200/50 dark:border-gray-700/50 transform rotate-6 hover:rotate-3 transition-transform duration-300 cursor-pointer">
                   <div className="flex items-center gap-4">

@@ -1,11 +1,11 @@
 import React, { JSX } from "react";
-import { 
-  Target, 
-  Eye, 
-  Heart, 
-  Users, 
-  Trophy, 
-  BookOpen,
+import Image from "next/image";
+import {
+  Target,
+  Eye,
+  Heart,
+  Users,
+  Trophy,
   Award,
   Globe
 } from "lucide-react";
@@ -93,8 +93,8 @@ export default function About(): JSX.Element {
                 About Excellence Schools
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                For over a decade, Excellence Schools has been at the forefront of Nigerian education, 
-                nurturing young minds from primary through secondary levels with a commitment to 
+                For over a decade, Excellence Schools has been at the forefront of Nigerian education,
+                nurturing young minds from primary through secondary levels with a commitment to
                 academic excellence and character development.
               </p>
               <div className="grid grid-cols-2 gap-6">
@@ -109,9 +109,11 @@ export default function About(): JSX.Element {
               </div>
             </div>
             <div className="relative">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="About Excellence Schools"
+                width={800}
+                height={600}
                 className="rounded-2xl shadow-2xl dark:shadow-gray-900/50"
               />
             </div>
@@ -130,8 +132,8 @@ export default function About(): JSX.Element {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Mission</h3>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  To provide world-class education that develops intellectually curious, 
-                  morally upright, and globally competitive Nigerian citizens who will 
+                  To provide world-class education that develops intellectually curious,
+                  morally upright, and globally competitive Nigerian citizens who will
                   contribute meaningfully to society while maintaining their cultural identity.
                 </p>
               </div>
@@ -144,8 +146,8 @@ export default function About(): JSX.Element {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Vision</h3>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  To be the leading educational institution in Nigeria, recognized for 
-                  producing well-rounded students who excel academically, demonstrate 
+                  To be the leading educational institution in Nigeria, recognized for
+                  producing well-rounded students who excel academically, demonstrate
                   strong character, and become positive change agents in their communities.
                 </p>
               </div>
@@ -168,8 +170,8 @@ export default function About(): JSX.Element {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value: Value, index: number) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl dark:shadow-gray-700/50 dark:hover:shadow-gray-700/70 transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="p-6 text-center">
@@ -193,20 +195,20 @@ export default function About(): JSX.Element {
               Our Journey
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              From humble beginnings to becoming one of Lagos's premier educational institutions.
+              From humble beginnings to becoming one of Lagos&apos;s premier educational institutions.
             </p>
           </div>
 
           <div className="relative">
             {/* Timeline line */}
             <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-blue-500 to-orange-500"></div>
-            
+
             <div className="space-y-12">
               {milestones.map((milestone: Milestone, index: number) => (
                 <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                   {/* Timeline dot */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white dark:bg-gray-800 border-4 border-blue-500 rounded-full z-10"></div>
-                  
+
                   {/* Content */}
                   <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg dark:shadow-gray-700/50">
@@ -243,9 +245,11 @@ export default function About(): JSX.Element {
             {leaders.map((leader: Leader, index: number) => (
               <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg dark:shadow-gray-700/50 text-center">
                 <div className="p-8">
-                  <img
+                  <Image
                     src={leader.image}
                     alt={leader.name}
+                    width={128}
+                    height={128}
                     className="w-32 h-32 rounded-full mx-auto mb-6 object-cover"
                   />
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{leader.name}</h3>

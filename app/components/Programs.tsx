@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { GraduationCap, BookOpen, Users, ArrowRight, Clock, Star, Sparkles, LucideIcon } from "lucide-react";
 import Link from "next/link";
 
@@ -30,7 +31,7 @@ const programs: Program[] = [
   },
   {
     level: "Junior Secondary",
-    age: "Ages 12-14", 
+    age: "Ages 12-14",
     grades: "JSS 1-3",
     icon: Users,
     color: "from-orange-500 to-red-500",
@@ -42,7 +43,7 @@ const programs: Program[] = [
   {
     level: "Senior Secondary",
     age: "Ages 15-17",
-    grades: "SSS 1-3", 
+    grades: "SSS 1-3",
     icon: GraduationCap,
     color: "from-green-500 to-emerald-500",
     bgColor: "from-green-50 to-emerald-50",
@@ -61,15 +62,15 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ 
-  children, 
-  className = '', 
+const Button: React.FC<ButtonProps> = ({
+  children,
+  className = '',
   size = 'default',
   variant = 'default',
-  onClick 
+  onClick
 }) => {
   const baseClasses = "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
-  
+
   const sizeClasses = {
     default: "px-6 py-3 text-base",
     lg: "px-8 py-4 text-lg"
@@ -81,7 +82,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <button 
+    <button
       onClick={onClick}
       className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
     >
@@ -119,16 +120,16 @@ const Programs: React.FC = () => {
             <Clock className="w-5 h-5 text-blue-600 dark:text-blue-400" />
             <span className="text-blue-700 dark:text-blue-400 font-semibold">ACADEMIC JOURNEY</span>
           </div>
-          
+
           <h2 className="text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-8">
             From First Steps to
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 dark:from-blue-400 dark:via-purple-400 dark:to-orange-400 mt-2">
               Future Leaders
             </span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Every child's journey is unique. Our three-tier system ensures seamless progression 
+            Every child&apos;s journey is unique. Our three-tier system ensures seamless progression
             from curious beginners to confident graduates ready for university and beyond.
           </p>
         </div>
@@ -137,21 +138,23 @@ const Programs: React.FC = () => {
         <div className="space-y-24">
           {programs.map((program: Program, index: number) => (
             <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-              
+
               {/* Image section */}
               <div className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                 <div className={`absolute inset-0 bg-gradient-to-br ${program.color} ${getDarkModeColors(program.color)} rounded-[2.5rem] transform ${index % 2 === 0 ? 'rotate-3' : '-rotate-3'} scale-105 opacity-20 blur-xl`}></div>
-                
+
                 <div className="relative">
-                  <img 
+                  <Image
                     src={program.image}
                     alt={`${program.level} at Excellence Schools`}
+                    width={800}
+                    height={500}
                     className={`w-full h-[500px] object-cover rounded-[2.5rem] shadow-2xl dark:shadow-gray-900/50 transform ${index % 2 === 0 ? '-rotate-2' : 'rotate-2'} hover:rotate-0 transition-transform duration-500 border border-white/20 dark:border-gray-700/30`}
                   />
-                  
+
                   {/* Dark mode overlay for image */}
                   <div className="absolute inset-0 bg-gray-900/10 dark:bg-gray-900/20 rounded-[2.5rem] transform ${index % 2 === 0 ? '-rotate-2' : 'rotate-2'} hover:rotate-0 transition-transform duration-500"></div>
-                  
+
                   {/* Floating badge */}
                   {program.highlight && (
                     <div className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 shadow-xl dark:shadow-gray-900/50 rounded-2xl p-4 transform rotate-12 hover:rotate-6 transition-transform duration-300 border border-gray-200/50 dark:border-gray-700/50">
@@ -172,7 +175,7 @@ const Programs: React.FC = () => {
               {/* Content section */}
               <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                 <div className={`bg-gradient-to-br ${program.bgColor} ${getDarkModeColors(program.bgColor)} rounded-3xl p-8 lg:p-12 transform ${index % 2 === 0 ? 'rotate-1' : '-rotate-1'} hover:rotate-0 transition-transform duration-300 border border-white/20 dark:border-gray-700/20 shadow-lg dark:shadow-gray-900/20`}>
-                  
+
                   {/* Badge */}
                   <div className={`inline-flex items-center gap-2 bg-gradient-to-r ${program.color} ${getDarkModeColors(program.color)} text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg`}>
                     <span>{program.grades}</span>
@@ -181,11 +184,11 @@ const Programs: React.FC = () => {
                   <h3 className="text-3xl lg:text-4xl font-black text-gray-900 dark:text-white mb-4">
                     {program.level}
                   </h3>
-                  
+
                   <p className="text-lg text-gray-600 dark:text-gray-400 font-medium mb-2">
                     {program.age}
                   </p>
-                  
+
                   <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-8">
                     {program.description}
                   </p>
@@ -215,10 +218,10 @@ const Programs: React.FC = () => {
         <div className="text-center mt-24">
           <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl p-12 border border-white/50 dark:border-gray-700/50 shadow-xl dark:shadow-gray-900/50 max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-              Ready to Start Your Child's Journey?
+              Ready to Start Your Child&apos;s Journey?
             </h3>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join our community of families who've chosen excellence for their children's future.
+              Join our community of families who&apos;ve chosen excellence for their children&apos;s future.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href={"admissions"}>

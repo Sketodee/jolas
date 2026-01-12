@@ -1,4 +1,5 @@
 import React, { JSX } from "react";
+import Image from "next/image";
 import { Star, Quote } from "lucide-react";
 
 interface Testimonial {
@@ -15,7 +16,7 @@ const testimonials: Testimonial[] = [
     name: "Mrs. Adebayo Folake",
     role: "Parent - Primary 4 Student",
     location: "Ikoyi, Lagos",
-    content: "Excellence Schools has been a blessing for our daughter. The teachers are caring, and the curriculum is well-structured. She's not just learning academics but also developing great character.",
+    content: "Excellence Schools has been a blessing for our daughter. The teachers are caring, and the curriculum is well-structured. She&apos;s not just learning academics but also developing great character.",
     rating: 5,
     avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80"
   },
@@ -23,7 +24,7 @@ const testimonials: Testimonial[] = [
     name: "Mr. Okafor Chinedu",
     role: "Parent - SSS 2 Student",
     location: "Victoria Island, Lagos",
-    content: "My son has excelled beyond our expectations. The JAMB preparation program is excellent, and the school's focus on both academics and sports has helped him grow tremendously.",
+    content: "My son has excelled beyond our expectations. The JAMB preparation program is excellent, and the school&apos;s focus on both academics and sports has helped him grow tremendously.",
     rating: 5,
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80"
   },
@@ -46,13 +47,13 @@ export default function Testimonials(): JSX.Element {
             What Parents Say About Us
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Hear from the families who trust us with their children's education and future success.
+            Hear from the families who trust us with their children&apos;s education and future success.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial: Testimonial, index: number) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="relative bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl dark:shadow-gray-700/50 dark:hover:shadow-gray-700/70 transition-shadow duration-300"
             >
               <div className="p-8">
@@ -70,9 +71,11 @@ export default function Testimonials(): JSX.Element {
                   "{testimonial.content}"
                 </p>
                 <div className="flex items-center gap-4">
-                  <img
+                  <Image
                     src={testimonial.avatar}
                     alt={testimonial.name}
+                    width={48}
+                    height={48}
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>

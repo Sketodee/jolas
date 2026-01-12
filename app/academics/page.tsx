@@ -1,10 +1,11 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { 
-  BookOpen, 
-  Users, 
-  Clock, 
-  Trophy, 
+import {
+  BookOpen,
+  Users,
+  Clock,
+  Trophy,
   Globe,
   Calculator,
   Beaker,
@@ -84,7 +85,7 @@ const secondaryPrograms: SecondaryProgram[] = [
     color: "blue"
   },
   {
-    title: "Commercial Track", 
+    title: "Commercial Track",
     description: "For students interested in business, economics, and commerce",
     subjects: ["Mathematics", "Economics", "Accounting", "Commerce", "English", "Government"],
     careers: ["Banking", "Business", "Economics", "Accounting"],
@@ -123,15 +124,15 @@ const facilities: Facility[] = [
 ];
 
 // Custom Components
-const Button: React.FC<ButtonProps> = ({ 
-  children, 
-  className = '', 
+const Button: React.FC<ButtonProps> = ({
+  children,
+  className = '',
   size = 'default',
   variant = 'default',
-  onClick 
+  onClick
 }) => {
   const baseClasses = "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500";
-  
+
   const sizeClasses = {
     default: "px-6 py-3 text-base",
     lg: "px-8 py-4 text-lg"
@@ -143,7 +144,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <button 
+    <button
       onClick={onClick}
       className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
     >
@@ -216,7 +217,7 @@ const Academics: React.FC = () => {
             Academic Excellence
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Our comprehensive curriculum combines the Nigerian National Curriculum with 
+            Our comprehensive curriculum combines the Nigerian National Curriculum with
             international best practices, preparing students for success in Nigeria and beyond.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -253,7 +254,7 @@ const Academics: React.FC = () => {
               Primary School Program
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Building strong foundations in literacy, numeracy, and character development 
+              Building strong foundations in literacy, numeracy, and character development
               through engaging, child-centered learning approaches.
             </p>
           </div>
@@ -295,9 +296,11 @@ const Academics: React.FC = () => {
                   </li>
                 </ul>
               </div>
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Primary school classroom"
+                width={600}
+                height={400}
                 className="rounded-xl shadow-lg border border-white/20 dark:border-gray-700/30"
               />
             </div>
@@ -313,7 +316,7 @@ const Academics: React.FC = () => {
               Secondary School Programs
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Comprehensive secondary education with specialized tracks to prepare students 
+              Comprehensive secondary education with specialized tracks to prepare students
               for WAEC, JAMB, and university admission.
             </p>
           </div>
@@ -363,7 +366,7 @@ const Academics: React.FC = () => {
                     WAEC & JAMB Preparation
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-6">
-                    Our comprehensive exam preparation program ensures students are fully 
+                    Our comprehensive exam preparation program ensures students are fully
                     ready for both WAEC and JAMB examinations, with consistently high pass rates.
                   </p>
                   <ul className="space-y-2 text-gray-700 dark:text-gray-300 mb-6">
@@ -383,9 +386,11 @@ const Academics: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                   alt="Students studying"
+                  width={600}
+                  height={400}
                   className="rounded-xl shadow-lg border border-white/20 dark:border-gray-700/30"
                 />
               </div>
@@ -402,7 +407,7 @@ const Academics: React.FC = () => {
               World-Class Facilities
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Our modern facilities provide the perfect environment for learning, 
+              Our modern facilities provide the perfect environment for learning,
               creativity, and personal development.
             </p>
           </div>
@@ -411,10 +416,11 @@ const Academics: React.FC = () => {
             {facilities.map((facility: Facility, index: number) => (
               <Card key={index} className="hover:shadow-xl dark:hover:shadow-gray-900/50 transition-all duration-300 overflow-hidden">
                 <div className="relative h-48">
-                  <img 
+                  <Image
                     src={facility.image}
                     alt={facility.name}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                   <div className="absolute inset-0 bg-black/20 dark:bg-black/40"></div>
                 </div>
@@ -432,7 +438,7 @@ const Academics: React.FC = () => {
       <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-800 dark:to-blue-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Begin Your Child's Academic Journey?
+            Ready to Begin Your Child&apos;s Academic Journey?
           </h2>
           <p className="text-xl text-blue-100 dark:text-blue-200 mb-8">
             Join our community of learners and give your child the best educational foundation.

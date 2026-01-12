@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import ContactInquiry, { ContactInquiryData, ContactInquiryResponse } from "../utils/ContactInquiry";
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
   Send,
   CheckCircle,
   ChevronDown
@@ -43,9 +43,9 @@ interface ContactInfo {
 }
 
 // Custom Components
-const Button: React.FC<ButtonProps> = ({ 
-  children, 
-  className = '', 
+const Button: React.FC<ButtonProps> = ({
+  children,
+  className = '',
   size = 'default',
   variant = 'default',
   onClick,
@@ -53,7 +53,7 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button'
 }) => {
   const baseClasses = "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed";
-  
+
   const sizeClasses = {
     default: "px-6 py-3 text-base",
     lg: "px-8 py-4 text-lg"
@@ -65,7 +65,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <button 
+    <button
       type={type}
       onClick={onClick}
       disabled={disabled}
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError("");
-    
+
     try {
       // Convert form data to ContactInquiry format
       const inquiryData: ContactInquiryData = {
@@ -113,13 +113,13 @@ const Contact: React.FC = () => {
         phone: formData.phone,
         inquiry_type: formData.inquiry_type as 'admissions' | 'general' | 'academics' | 'other',
         message: formData.message,
-        ...(formData.student_level && { 
-          student_level: formData.student_level as 'primary' | 'secondary' | 'both' 
+        ...(formData.student_level && {
+          student_level: formData.student_level as 'primary' | 'secondary' | 'both'
         })
       };
 
       const response: ContactInquiryResponse = await ContactInquiry.create(inquiryData);
-      
+
       if (response.success) {
         setIsSubmitted(true);
         setFormData({
@@ -140,7 +140,7 @@ const Contact: React.FC = () => {
       console.error("Error submitting inquiry:", error);
       setSubmitError("An unexpected error occurred. Please try again.");
     }
-    
+
     setIsSubmitting(false);
   };
 
@@ -235,9 +235,9 @@ const Contact: React.FC = () => {
           </div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Thank You!</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            We've received your inquiry and will get back to you within 24 hours.
+            We&apos;ve received your inquiry and will get back to you within 24 hours.
           </p>
-          <Button 
+          <Button
             onClick={() => setIsSubmitted(false)}
             className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
           >
@@ -257,7 +257,7 @@ const Contact: React.FC = () => {
             Get in Touch
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Ready to give your child the best education? Contact us today to learn more 
+            Ready to give your child the best education? Contact us today to learn more
             about our programs or schedule a school visit.
           </p>
         </div>
@@ -275,8 +275,8 @@ const Contact: React.FC = () => {
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{info.title}</h3>
                 {info.content}
                 {info.linkText && info.linkUrl && (
-                  <a 
-                    href={info.linkUrl} 
+                  <a
+                    href={info.linkUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium inline-block mt-2"
@@ -294,7 +294,7 @@ const Contact: React.FC = () => {
               <div className="p-6 pb-0">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Send Us a Message</h2>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Fill out the form below and we'll get back to you as soon as possible.
+                  Fill out the form below and we&apos;ll get back to you as soon as possible.
                 </p>
               </div>
               <div className="p-8">
@@ -359,7 +359,7 @@ const Contact: React.FC = () => {
                           </span>
                           <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${inquiryTypeOpen ? 'rotate-180' : ''}`} />
                         </button>
-                        
+
                         {inquiryTypeOpen && (
                           <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xl shadow-lg z-10">
                             {inquiryTypes.map((type, index) => (
@@ -370,9 +370,8 @@ const Contact: React.FC = () => {
                                   handleChange('inquiry_type', type.value);
                                   setInquiryTypeOpen(false);
                                 }}
-                                className={`w-full px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white ${
-                                  index === 0 ? 'rounded-t-xl' : index === inquiryTypes.length - 1 ? 'rounded-b-xl' : ''
-                                }`}
+                                className={`w-full px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white ${index === 0 ? 'rounded-t-xl' : index === inquiryTypes.length - 1 ? 'rounded-b-xl' : ''
+                                  }`}
                               >
                                 {type.label}
                               </button>
@@ -398,7 +397,7 @@ const Contact: React.FC = () => {
                         </span>
                         <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${studentLevelOpen ? 'rotate-180' : ''}`} />
                       </button>
-                      
+
                       {studentLevelOpen && (
                         <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xl shadow-lg z-10">
                           {studentLevels.map((level, index) => (
@@ -409,9 +408,8 @@ const Contact: React.FC = () => {
                                 handleChange('student_level', level.value);
                                 setStudentLevelOpen(false);
                               }}
-                              className={`w-full px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white ${
-                                index === 0 ? 'rounded-t-xl' : index === studentLevels.length - 1 ? 'rounded-b-xl' : ''
-                              }`}
+                              className={`w-full px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white ${index === 0 ? 'rounded-t-xl' : index === studentLevels.length - 1 ? 'rounded-b-xl' : ''
+                                }`}
                             >
                               {level.label}
                             </button>

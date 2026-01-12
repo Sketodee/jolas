@@ -1,6 +1,7 @@
-'use client';   
+'use client';
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
 
 // TypeScript Interfaces
@@ -49,7 +50,7 @@ const galleryImages: GalleryImage[] = [
     id: 2,
     src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     title: "Primary School Class",
-    category: "classrooms", 
+    category: "classrooms",
     description: "Primary school students in their bright, welcoming classroom environment"
   },
   {
@@ -125,9 +126,9 @@ const galleryImages: GalleryImage[] = [
 ];
 
 // Custom Components
-const Button: React.FC<ButtonProps> = ({ 
-  children, 
-  className = '', 
+const Button: React.FC<ButtonProps> = ({
+  children,
+  className = '',
   size = 'default',
   variant = 'default',
   onClick,
@@ -135,7 +136,7 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button'
 }) => {
   const baseClasses = "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed";
-  
+
   const sizeClasses = {
     default: "px-6 py-3 text-base",
     lg: "px-8 py-4 text-lg"
@@ -147,7 +148,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <button 
+    <button
       type={type}
       onClick={onClick}
       disabled={disabled}
@@ -163,8 +164,8 @@ const Gallery: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
-  const filteredImages: GalleryImage[] = activeCategory === "all" 
-    ? galleryImages 
+  const filteredImages: GalleryImage[] = activeCategory === "all"
+    ? galleryImages
     : galleryImages.filter((img: GalleryImage) => img.category === activeCategory);
 
   const openLightbox = (image: GalleryImage): void => {
@@ -175,25 +176,25 @@ const Gallery: React.FC = () => {
     setSelectedImage(null);
   };
 
-  const nextImage = (): void => {
+  const nextImage = useCallback((): void => {
     if (!selectedImage) return;
     const currentIndex = filteredImages.findIndex((img: GalleryImage) => img.id === selectedImage.id);
     const nextIndex = (currentIndex + 1) % filteredImages.length;
     setSelectedImage(filteredImages[nextIndex]);
-  };
+  }, [selectedImage, filteredImages]);
 
-  const prevImage = (): void => {
+  const prevImage = useCallback((): void => {
     if (!selectedImage) return;
     const currentIndex = filteredImages.findIndex((img: GalleryImage) => img.id === selectedImage.id);
     const prevIndex = (currentIndex - 1 + filteredImages.length) % filteredImages.length;
     setSelectedImage(filteredImages[prevIndex]);
-  };
+  }, [selectedImage, filteredImages]);
 
   // Keyboard navigation for lightbox
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent): void => {
       if (!selectedImage) return;
-      
+
       switch (event.key) {
         case 'ArrowRight':
           nextImage();
@@ -216,7 +217,7 @@ const Gallery: React.FC = () => {
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
-  }, [selectedImage]);
+  }, [selectedImage, nextImage, prevImage]);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -228,7 +229,7 @@ const Gallery: React.FC = () => {
               School Gallery
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-              Take a visual tour of Excellence Schools - from our modern classrooms and 
+              Take a visual tour of Excellence Schools - from our modern classrooms and
               state-of-the-art facilities to memorable events and student achievements.
             </p>
           </div>
@@ -244,11 +245,10 @@ const Gallery: React.FC = () => {
                 key={category.id}
                 variant={activeCategory === category.id ? "default" : "outline"}
                 onClick={() => setActiveCategory(category.id)}
-                className={`transition-all duration-200 ${
-                  activeCategory === category.id 
-                    ? "bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600" 
-                    : "hover:bg-blue-50 dark:hover:bg-blue-950/50 hover:border-blue-300 dark:hover:border-blue-500"
-                }`}
+                className={`transition-all duration-200 ${activeCategory === category.id
+                  ? "bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+                  : "hover:bg-blue-50 dark:hover:bg-blue-950/50 hover:border-blue-300 dark:hover:border-blue-500"
+                  }`}
               >
                 {category.name} ({category.count})
               </Button>
@@ -263,16 +263,17 @@ const Gallery: React.FC = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredImages.map((image: GalleryImage) => (
               <div
-                key={image.id} 
+                key={image.id}
                 className="group cursor-pointer hover:shadow-xl dark:hover:shadow-gray-900/50 transition-all duration-300 shadow-md overflow-hidden bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700"
                 onClick={() => openLightbox(image)}
               >
                 <div className="relative aspect-square overflow-hidden">
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    loading="lazy"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
                     <Play className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -316,7 +317,7 @@ const Gallery: React.FC = () => {
 
       {/* Lightbox Modal */}
       {selectedImage && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/90 dark:bg-black/95 z-50 flex items-center justify-center p-4"
           onClick={closeLightbox}
         >
@@ -336,7 +337,7 @@ const Gallery: React.FC = () => {
             >
               <ChevronRight className="w-6 h-6" />
             </button>
-            
+
             {/* Close Button */}
             <button
               onClick={closeLightbox}
@@ -347,9 +348,11 @@ const Gallery: React.FC = () => {
             </button>
 
             {/* Image */}
-            <img
+            <Image
               src={selectedImage.src}
               alt={selectedImage.title}
+              width={1200}
+              height={800}
               className="max-w-full max-h-full object-contain rounded-lg"
             />
 

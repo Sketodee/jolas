@@ -1,19 +1,16 @@
 'use client'
 import React, { useState } from "react";
-import { 
-  GraduationCap, 
-  Menu, 
-  X, 
-  Phone, 
-  Mail, 
-  MapPin,
+import {
+  GraduationCap,
+  Menu,
+  X,
+  Phone,
+  Mail,
   BookOpen,
   Users,
-  Image as ImageIcon,
   MessageCircle,
   Heart,
   Star,
-  ArrowRight,
   LucideIcon
 } from "lucide-react";
 import Link from "next/link";
@@ -25,16 +22,12 @@ interface NavigationItem {
   icon: LucideIcon;
 }
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
 const navigationItems: NavigationItem[] = [
   { title: "Home", url: ("/"), icon: GraduationCap },
   { title: "About", url: ("/about"), icon: Heart },
   { title: "Academics", url: ("/academics"), icon: BookOpen },
   { title: "Admissions", url: ("/admissions"), icon: Users },
-  { title: "Gallery", url: ("/gallery"), icon: ImageIcon },
+  // { title: "Gallery", url: ("/gallery"), icon: ImageIcon },
   { title: "Contact", url: ("/contact"), icon: MessageCircle },
 ];
 
@@ -77,7 +70,7 @@ const Layout: React.FC = () => {
       <header className="bg-white/95 backdrop-blur-md shadow-xl sticky top-0 z-50 border-b border-blue-100/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            
+
             {/* Creative logo */}
             <Link href={("/")} className="flex items-center gap-4 group">
               <div className="relative">
@@ -91,7 +84,7 @@ const Layout: React.FC = () => {
                   Excellence Schools
                 </h1>
                 <p className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
-                  Nurturing Tomorrow's Leaders
+                  Nurturing Tomorrow&apos;s Leaders
                 </p>
               </div>
             </Link>
@@ -99,20 +92,19 @@ const Layout: React.FC = () => {
             {/* Creative navigation */}
             <nav className="hidden lg:flex items-center space-x-2">
               {navigationItems.map((item: NavigationItem) => (
-            <Link
-      key={item.title}
-      href={item.url}
-      className={`relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 transform hover:scale-105 ${
-        pathname === item.url
-          ? "bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 shadow-lg"
-          : "text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-700"
-      }`}
-    >
-      {item.title}
-      {pathname === item.url && (
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-orange-400 rounded-full"></div>
-      )}
-    </Link>
+                <Link
+                  key={item.title}
+                  href={item.url}
+                  className={`relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 transform hover:scale-105 ${pathname === item.url
+                    ? "bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 shadow-lg"
+                    : "text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-700"
+                    }`}
+                >
+                  {item.title}
+                  {pathname === item.url && (
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-orange-400 rounded-full"></div>
+                  )}
+                </Link>
               ))}
             </nav>
 
@@ -145,11 +137,10 @@ const Layout: React.FC = () => {
                   key={item.title}
                   href={item.url}
                   onClick={closeMobileMenu}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
-                    location.pathname === item.url
-                      ? "bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700"
-                      : "text-gray-700 hover:bg-gray-50"
-                  }`}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all ${location.pathname === item.url
+                    ? "bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700"
+                    : "text-gray-700 hover:bg-gray-50"
+                    }`}
                 >
                   <item.icon className="w-5 h-5" />
                   {item.title}
