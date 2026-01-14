@@ -253,7 +253,7 @@ const Admissions: React.FC = () => {
           </div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Application Received!</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            Thank you for your interest in Excellence Schools. Our admissions team will contact you within 24 hours to guide you through the next steps.
+            Thank you for your interest in Jolas Schools. Our admissions team will contact you within 24 hours to guide you through the next steps.
           </p>
           <Button
             onClick={() => setIsSubmitted(false)}
@@ -272,7 +272,7 @@ const Admissions: React.FC = () => {
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-orange-50 dark:from-blue-950/50 dark:via-gray-900 dark:to-orange-950/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Join Excellence Schools
+            Join Jolas Schools
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
             Give your child the gift of excellent education. Applications are now open for the 2024/2025 academic session.
@@ -319,7 +319,7 @@ const Admissions: React.FC = () => {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">School Brochure</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
                   Learn more about our programs, facilities, teaching philosophy, and what makes
-                  Excellence Schools the right choice for your child.
+                  Jolas Schools the right choice for your child.
                 </p>
                 <Button onClick={downloadBrochure} variant="outline" className="w-full border-orange-600 dark:border-orange-500 text-orange-600 dark:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-950/50">
                   <FileText className="mr-2 w-5 h-5" />
