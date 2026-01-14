@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
               {/* Badge with creative positioning */}
               <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 text-orange-700 dark:text-orange-400 px-5 py-3 rounded-full text-sm font-medium mb-8 shadow-lg transform -rotate-1">
                 <Award className="w-4 h-4" />
-                Leading Nigerian School Since 2010
+                Driving Education and Innovation
               </div>
 
               {/* Main heading with creative typography */}
@@ -42,9 +42,9 @@ const Hero: React.FC = () => {
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 dark:from-blue-400 dark:via-purple-400 dark:to-orange-400 transform -rotate-1 inline-block my-2">
                   Minds Flourish
                 </span>
-                <span className="block text-4xl md:text-5xl lg:text-6xl font-light text-gray-700 dark:text-gray-300 mt-2">
+                {/* <span className="block text-4xl md:text-5xl lg:text-6xl font-light text-gray-700 dark:text-gray-300 mt-2">
                   in Lagos
-                </span>
+                </span> */}
               </h1>
 
               <div className="relative">
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
 
               {/* Action buttons with creative layout */}
               <div className="flex flex-col sm:flex-row gap-4 mb-16">
-                <Link href={"Admissions"}>
+                <Link href={"/admissions"}>
                   <button
                     className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700 text-white shadow-xl group transform hover:scale-105 transition-all duration-200 px-8 py-4 text-lg"
                   >
@@ -68,31 +68,31 @@ const Hero: React.FC = () => {
                     <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform duration-200" />
                   </button>
                 </Link>
-                <Link href={"Contact"}>
+                {/* <Link href={"Contact"}>
                   <button
                     className="border-2 border-gray-300 hover:border-blue-300 hover:bg-blue-50/50 dark:border-gray-600 dark:hover:border-blue-500 dark:hover:bg-blue-950/50 dark:text-gray-300 dark:hover:text-blue-400 backdrop-blur-sm px-8 py-4 text-lg"
                   >
                     Visit Our Campus
                   </button>
-                </Link>
+                </Link> */}
               </div>
 
               {/* Stats with organic layout */}
               <div className="grid grid-cols-3 gap-8">
-                <div className="text-center lg:text-left transform rotate-1 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm p-4 rounded-2xl shadow-sm border border-white/20 dark:border-gray-700/20">
+                {/* <div className="text-center lg:text-left transform rotate-1 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm p-4 rounded-2xl shadow-sm border border-white/20 dark:border-gray-700/20">
                   <div className="flex items-center justify-center lg:justify-start gap-2 mb-2">
                     <div className="w-2 h-2 bg-orange-500 dark:bg-orange-400 rounded-full animate-pulse"></div>
                     <span className="text-3xl font-black text-gray-900 dark:text-white">98%</span>
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">WAEC Excellence</p>
-                </div>
-                <div className="text-center lg:text-left transform -rotate-1 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm p-4 rounded-2xl shadow-sm border border-white/20 dark:border-gray-700/20">
+                </div> */}
+                {/* <div className="text-center lg:text-left transform -rotate-1 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm p-4 rounded-2xl shadow-sm border border-white/20 dark:border-gray-700/20">
                   <div className="flex items-center justify-center lg:justify-start gap-2 mb-2">
                     <Users className="w-5 h-5 text-blue-500 dark:text-blue-400" />
                     <span className="text-3xl font-black text-gray-900 dark:text-white">500+</span>
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">Happy Families</p>
-                </div>
+                </div> */}
                 <div className="text-center lg:text-left bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm p-4 rounded-2xl shadow-sm border border-white/20 dark:border-gray-700/20">
                   <div className="flex items-center justify-center lg:justify-start gap-2 mb-2">
                     <div className="w-2 h-2 bg-green-500 dark:bg-green-400 rounded-full animate-pulse delay-500"></div>
@@ -122,7 +122,7 @@ const Hero: React.FC = () => {
                 </div>
 
                 {/* Floating achievement card */}
-                <div className="absolute -bottom-8 -left-8 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-2xl dark:shadow-gray-900/50 border border-gray-200/50 dark:border-gray-700/50 transform rotate-6 hover:rotate-3 transition-transform duration-300 cursor-pointer">
+                {/* <div className="absolute -bottom-8 -left-8 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-2xl dark:shadow-gray-900/50 border border-gray-200/50 dark:border-gray-700/50 transform rotate-6 hover:rotate-3 transition-transform duration-300 cursor-pointer">
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 bg-gradient-to-br from-green-400 to-emerald-500 dark:from-green-500 dark:to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg">
                       <Award className="w-7 h-7 text-white" />
@@ -132,7 +132,7 @@ const Hero: React.FC = () => {
                       <p className="text-sm text-gray-600 dark:text-gray-400">Lagos 2023</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Floating student card */}
                 <div className="absolute -top-6 -right-6 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm p-4 rounded-xl shadow-xl dark:shadow-gray-900/50 border border-gray-200/50 dark:border-gray-700/50 transform -rotate-6 hover:-rotate-3 transition-transform duration-300">

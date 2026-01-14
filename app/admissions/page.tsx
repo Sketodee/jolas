@@ -398,56 +398,6 @@ const Admissions: React.FC = () => {
         </div>
       </section>
 
-      {/* School Fees */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-950/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-              School Fees Structure
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Transparent and competitive fees for quality education. Payment plans available.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {fees.map((fee: Fee, index: number) => (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl dark:hover:shadow-gray-900/50 transition-all duration-300">
-                <div className="text-center pb-4 p-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-orange-500 dark:from-blue-400 dark:to-orange-400 text-white rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <DollarSign className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{fee.level}</h3>
-                </div>
-                <div className="text-center space-y-3 p-6 pt-0">
-                  <div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Admission Fee</p>
-                    <p className="text-lg font-bold text-gray-900 dark:text-white">{fee.admission}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Tuition per Term</p>
-                    <p className="text-lg font-bold text-gray-900 dark:text-white">{fee.tuition}</p>
-                  </div>
-                  <div className="border-t border-gray-200 dark:border-gray-700 pt-3">
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Total per Year</p>
-                    <p className="text-xl font-bold text-blue-600 dark:text-blue-400">{fee.total}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
-              *Fees include tuition, books, uniforms, and extracurricular activities.
-              Payment plans available to make education affordable for all families.
-            </p>
-            <Button variant="outline" className="hover:bg-blue-50 dark:hover:bg-blue-950/50 hover:border-blue-300 dark:hover:border-blue-500">
-              Contact for Payment Plans
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Application Form */}
       <section className="py-20 bg-white dark:bg-gray-900">
@@ -609,17 +559,17 @@ const Admissions: React.FC = () => {
             <div className="bg-white/10 dark:bg-white/5 rounded-xl p-6 backdrop-blur-sm border border-white/20 dark:border-white/10">
               <Calendar className="w-12 h-12 text-orange-400 dark:text-orange-300 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Application Opens</h3>
-              <p className="text-blue-100 dark:text-blue-200">January 15, 2024</p>
+              <p className="text-blue-100 dark:text-blue-200">January 12, 2026</p>
             </div>
             <div className="bg-white/10 dark:bg-white/5 rounded-xl p-6 backdrop-blur-sm border border-white/20 dark:border-white/10">
               <Clock className="w-12 h-12 text-orange-400 dark:text-orange-300 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Application Deadline</h3>
-              <p className="text-blue-100 dark:text-blue-200">July 31, 2024</p>
+              <p className="text-blue-100 dark:text-blue-200">July 31, 2026</p>
             </div>
             <div className="bg-white/10 dark:bg-white/5 rounded-xl p-6 backdrop-blur-sm border border-white/20 dark:border-white/10">
               <Users className="w-12 h-12 text-orange-400 dark:text-orange-300 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">New Session Begins</h3>
-              <p className="text-blue-100 dark:text-blue-200">September 9, 2024</p>
+              <p className="text-blue-100 dark:text-blue-200">September 9, 2026</p>
             </div>
           </div>
         </div>

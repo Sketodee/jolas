@@ -46,23 +46,23 @@ const Layout: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Creative top bar */}
-      <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-purple-900 text-white py-3 px-4 hidden lg:block relative overflow-hidden">
+      <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-purple-900 text-white py-3 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm"></div>
         <div className="relative max-w-7xl mx-auto flex justify-between items-center text-sm">
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-200">
               <Phone className="w-4 h-4 text-orange-300" />
-              <span className="font-medium">+234 803 123 4567</span>
+              <span className="text-xs md:text-sm">+234 815 163 1337</span>
             </div>
             <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-200">
               <Mail className="w-4 h-4 text-orange-300" />
-              <span className="font-medium">info@excellenceschools.edu.ng</span>
+              <span className="text-xs md:text-sm">contact@jolasschools.com</span>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <Star className="w-4 h-4 text-yellow-300 fill-current" />
             <span className="font-medium">Rated #1 School in Lagos</span>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -79,11 +79,11 @@ const Layout: React.FC = () => {
                 </div>
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-orange-400 rounded-full animate-pulse"></div>
               </div>
-              <div className="hidden sm:block">
+              <div className="">
                 <h1 className="text-2xl font-black text-gray-900 group-hover:text-blue-700 transition-colors">
-                  Excellence Schools
+                  Jolas Schools
                 </h1>
-                <p className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
+                <p className="text-sm md:text-base font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
                   Nurturing Tomorrow&apos;s Leaders
                 </p>
               </div>
@@ -120,7 +120,7 @@ const Layout: React.FC = () => {
             {/* Mobile menu button */}
             <button
               onClick={handleMobileMenuToggle}
-              className="lg:hidden p-3 rounded-xl hover:bg-gray-100 transition-colors"
+              className="lg:hidden p-3 rounded-xl text-gray-700 hover:bg-gray-100 transition-colors"
               aria-label="Toggle mobile menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

@@ -14,7 +14,7 @@ const Footer = () => {
     { title: "About", url: ("/about"), icon: Heart },
     { title: "Academics", url: ("/academics"), icon: BookOpen },
     { title: "Admissions", url: ("/admissions"), icon: Users },
-    { title: "Gallery", url: ("/gallery"), icon: ImageIcon },
+    // { title: "Gallery", url: ("/gallery"), icon: ImageIcon },
     { title: "Contact", url: ("/contact"), icon: MessageCircle },
   ];
   return (
@@ -35,8 +35,8 @@ const Footer = () => {
                   <GraduationCap className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-black">Excellence Schools</h3>
-                  <p className="text-orange-300 font-semibold">Shaping Nigeria&apos;s Future</p>
+                  <h3 className="text-2xl font-black">Jolas Schools</h3>
+                  <p className="text-orange-300 font-semibold"> Nurturing Tomorrow&apos;s Leaders</p>
                 </div>
               </div>
 
@@ -46,17 +46,17 @@ const Footer = () => {
               </p>
 
               <div className="space-y-4">
-                <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                {/* <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
                   <MapPin className="w-5 h-5 text-orange-400 group-hover:scale-110 transition-transform" />
                   <span>Plot 123, Adeola Odeku Street, Victoria Island, Lagos</span>
-                </div>
+                </div> */}
                 <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
                   <Phone className="w-5 h-5 text-orange-400 group-hover:scale-110 transition-transform" />
-                  <span>+234 803 123 4567</span>
+                  <span>+234 815 163 1337</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
                   <Mail className="w-5 h-5 text-orange-400 group-hover:scale-110 transition-transform" />
-                  <span>info@excellenceschools.edu.ng</span>
+                  <span>contact@jolasschools.com</span>
                 </div>
               </div>
             </div>
@@ -101,13 +101,13 @@ const Footer = () => {
           <div className="border-t border-gray-700 dark:border-gray-600 mt-12 pt-8">
             <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
               <p className="text-gray-400 dark:text-gray-500 text-center lg:text-left">
-                © 2024 Excellence Schools Lagos. All rights reserved.
+                © 2026 Jolas Schools Lagos. All rights reserved.
                 <span className="text-orange-300 dark:text-orange-400 font-semibold"> Building Nigeria&apos;s Future Since 2010.</span>
               </p>
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <Star className="w-4 h-4 text-yellow-400 dark:text-yellow-500 fill-current" />
                 <span className="text-gray-300 dark:text-gray-400 text-sm">Trusted by 500+ Families</span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

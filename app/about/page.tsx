@@ -25,7 +25,7 @@ interface Milestone {
 interface Leader {
   name: string;
   position: string;
-  experience: string;
+  // experience: string;
   image: string;
 }
 
@@ -53,7 +53,7 @@ const values: Value[] = [
 ];
 
 const milestones: Milestone[] = [
-  { year: "2010", event: "Excellence Schools Founded", description: "Started with 50 students in a modest facility" },
+  { year: "2010", event: "Jolas Schools Founded", description: "Started with 50 students in a modest facility" },
   { year: "2015", event: "New Campus Opened", description: "Expanded to modern facilities in Victoria Island" },
   { year: "2018", event: "Award Recognition", description: "Received Lagos State Excellence in Education Award" },
   { year: "2020", event: "Digital Learning", description: "Successfully transitioned to hybrid learning model" },
@@ -64,19 +64,19 @@ const leaders: Leader[] = [
   {
     name: "Dr. Olumide Adegbola",
     position: "School Principal",
-    experience: "25+ years in education leadership, PhD in Educational Administration",
+    // experience: "25+ years in education leadership, PhD in Educational Administration",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80"
   },
   {
     name: "Mrs. Fatima Ibrahim",
     position: "Academic Director",
-    experience: "20+ years curriculum development, Masters in Educational Psychology",
+    // experience: "20+ years curriculum development, Masters in Educational Psychology",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80"
   },
   {
     name: "Mr. Emeka Okonkwo",
     position: "Student Affairs Director",
-    experience: "15+ years student development, Masters in Counseling Psychology",
+    // experience: "15+ years student development, Masters in Counseling Psychology",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80"
   }
 ];
@@ -90,10 +90,10 @@ export default function About(): JSX.Element {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                About Excellence Schools
+                About Jolas Schools
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                For over a decade, Excellence Schools has been at the forefront of Nigerian education,
+                For over a decade, Jolas Schools has been at the forefront of Nigerian education,
                 nurturing young minds from primary through secondary levels with a commitment to
                 academic excellence and character development.
               </p>
@@ -111,7 +111,7 @@ export default function About(): JSX.Element {
             <div className="relative">
               <Image
                 src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="About Excellence Schools"
+                alt="About Jolas Schools"
                 width={800}
                 height={600}
                 className="rounded-2xl shadow-2xl dark:shadow-gray-900/50"
@@ -188,7 +188,7 @@ export default function About(): JSX.Element {
       </section>
 
       {/* Our Story/Timeline */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      {/* <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
@@ -200,16 +200,15 @@ export default function About(): JSX.Element {
           </div>
 
           <div className="relative">
-            {/* Timeline line */}
             <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-blue-500 to-orange-500"></div>
 
             <div className="space-y-12">
               {milestones.map((milestone: Milestone, index: number) => (
                 <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                  {/* Timeline dot */}
+               
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white dark:bg-gray-800 border-4 border-blue-500 rounded-full z-10"></div>
 
-                  {/* Content */}
+               
                   <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg dark:shadow-gray-700/50">
                       <div className="p-6">
@@ -227,7 +226,7 @@ export default function About(): JSX.Element {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Leadership */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
@@ -254,9 +253,9 @@ export default function About(): JSX.Element {
                   />
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{leader.name}</h3>
                   <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">{leader.position}</p>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  {/* <p className="text-gray-600 dark:text-gray-300 text-sm">
                     {leader.experience}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             ))}

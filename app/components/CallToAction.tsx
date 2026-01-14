@@ -62,14 +62,14 @@ export default function CallToAction(): JSX.Element {
           </div>
 
           {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
             {stats.map((stat: StatItem, index: number) => (
               <div key={index} className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
                 <div className="text-blue-200 dark:text-blue-300 text-sm">{stat.label}</div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

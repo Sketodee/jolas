@@ -229,11 +229,11 @@ const Programs: React.FC = () => {
                   Apply Today
                 </Button>
               </Link>
-              <Link href={"contact"}>
+              {/* <Link href={"contact"}>
                 <Button size="lg" variant="outline" className="hover:bg-blue-50 dark:hover:bg-blue-950/50 border-2">
                   Book a Tour
                 </Button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

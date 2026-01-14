@@ -5,7 +5,7 @@ import { Star, Quote } from "lucide-react";
 interface Testimonial {
   name: string;
   role: string;
-  location: string;
+  // location: string;
   content: string;
   rating: number;
   avatar: string;
@@ -15,7 +15,7 @@ const testimonials: Testimonial[] = [
   {
     name: "Mrs. Adebayo Folake",
     role: "Parent - Primary 4 Student",
-    location: "Ikoyi, Lagos",
+    // location: "Ikoyi, Lagos",
     content: "Excellence Schools has been a blessing for our daughter. The teachers are caring, and the curriculum is well-structured. She&apos;s not just learning academics but also developing great character.",
     rating: 5,
     avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80"
@@ -23,7 +23,7 @@ const testimonials: Testimonial[] = [
   {
     name: "Mr. Okafor Chinedu",
     role: "Parent - SSS 2 Student",
-    location: "Victoria Island, Lagos",
+    // location: "Victoria Island, Lagos",
     content: "My son has excelled beyond our expectations. The JAMB preparation program is excellent, and the school&apos;s focus on both academics and sports has helped him grow tremendously.",
     rating: 5,
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80"
@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
   {
     name: "Mrs. Aisha Mohammed",
     role: "Parent - JSS 3 Student",
-    location: "Lekki, Lagos",
+    // location: "Lekki, Lagos",
     content: "The transition from primary to secondary was seamless. The school maintains high standards while ensuring each child feels valued and supported in their learning journey.",
     rating: 5,
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80"
@@ -81,7 +81,7 @@ export default function Testimonials(): JSX.Element {
                   <div>
                     <p className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</p>
                     <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-500">{testimonial.location}</p>
+                    {/* <p className="text-xs text-gray-500 dark:text-gray-500">{testimonial.location}</p> */}
                   </div>
                 </div>
               </div>

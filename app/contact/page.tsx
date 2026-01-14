@@ -145,31 +145,31 @@ const Contact: React.FC = () => {
   };
 
   const contactInfo: ContactInfo[] = [
-    {
-      icon: MapPin,
-      title: "Visit Our Campus",
-      content: (
-        <>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
-            Plot 123, Adeola Odeku Street<br />
-            Victoria Island, Lagos State<br />
-            Nigeria
-          </p>
-        </>
-      ),
-      bgColor: "bg-blue-100 dark:bg-blue-900/50",
-      iconColor: "text-blue-600 dark:text-blue-400",
-      linkText: "Get Directions →",
-      linkUrl: "https://maps.google.com"
-    },
+    // {
+    //   icon: MapPin,
+    //   title: "Visit Our Campus",
+    //   content: (
+    //     <>
+    //       <p className="text-gray-600 dark:text-gray-400 mb-4">
+    //         Plot 123, Adeola Odeku Street<br />
+    //         Victoria Island, Lagos State<br />
+    //         Nigeria
+    //       </p>
+    //     </>
+    //   ),
+    //   bgColor: "bg-blue-100 dark:bg-blue-900/50",
+    //   iconColor: "text-blue-600 dark:text-blue-400",
+    //   linkText: "Get Directions →",
+    //   linkUrl: "https://maps.google.com"
+    // },
     {
       icon: Phone,
       title: "Call Us",
       content: (
         <div className="space-y-2 text-gray-600 dark:text-gray-400">
-          <p>Main Line: +234 803 123 4567</p>
-          <p>Admissions: +234 803 123 4568</p>
-          <p>WhatsApp: +234 803 123 4569</p>
+          <p>Main Line: +234 815 163 1337</p>
+          {/* <p>Admissions: +234 803 123 4568</p> */}
+          <p>WhatsApp: +234 815 163 1337</p>
         </div>
       ),
       bgColor: "bg-orange-100 dark:bg-orange-900/50",
@@ -180,9 +180,7 @@ const Contact: React.FC = () => {
       title: "Email Us",
       content: (
         <div className="space-y-2 text-gray-600 dark:text-gray-400">
-          <p>info@excellenceschools.edu.ng</p>
-          <p>admissions@excellenceschools.edu.ng</p>
-          <p>principal@excellenceschools.edu.ng</p>
+          <p>contact@jolasschools.com</p>
         </div>
       ),
       bgColor: "bg-green-100 dark:bg-green-900/50",

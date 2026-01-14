@@ -45,12 +45,12 @@ const features: Feature[] = [
     description: "Passionate teachers with international qualifications and years of experience.",
     color: "purple"
   },
-  {
-    icon: Laptop,
-    title: "Smart Classrooms",
-    description: "Technology-integrated learning with interactive boards and modern equipment.",
-    color: "green"
-  },
+  // {
+  //   icon: Laptop,
+  //   title: "Smart Classrooms",
+  //   description: "Technology-integrated learning with interactive boards and modern equipment.",
+  //   color: "green"
+  // },
   {
     icon: Trophy,
     title: "Sports Excellence",
@@ -58,12 +58,12 @@ const features: Feature[] = [
     color: "orange",
     highlight: "Popular"
   },
-  {
-    icon: Globe,
-    title: "Global Perspective",
-    description: "International connections and exchange programs to broaden student horizons.",
-    color: "indigo"
-  },
+  // {
+  //   icon: Globe,
+  //   title: "Global Perspective",
+  //   description: "International connections and exchange programs to broaden student horizons.",
+  //   color: "indigo"
+  // },
   {
     icon: Heart,
     title: "Character Building",
@@ -97,13 +97,13 @@ const Features: React.FC = () => {
             </p>
             <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
               <Target className="w-4 h-4" />
-              <span>6 Core Excellence Areas</span>
+              <span>4 Core Excellence Areas</span>
             </div>
           </div>
         </div>
 
         {/* Features grid with creative layout */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Left column - 2 features */}
           <div className="space-y-8">
             {features.slice(0, 2).map((feature: Feature, index: number) => (
@@ -112,7 +112,7 @@ const Features: React.FC = () => {
           </div>
 
           {/* Center column - large feature */}
-          <div className="lg:row-span-2">
+          {/* <div className="lg:row-span-2">
             <div className="relative h-full bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/50 dark:to-purple-950/50 rounded-3xl p-8 overflow-hidden group hover:shadow-2xl dark:hover:shadow-gray-900/50 transition-all duration-500 border border-blue-100/50 dark:border-blue-800/30">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-200/50 to-purple-200/50 dark:from-blue-600/30 dark:to-purple-600/30 rounded-full blur-2xl"></div>
               <div className="relative z-10 h-full flex flex-col justify-between">
@@ -135,7 +135,7 @@ const Features: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Right column - 2 features */}
           <div className="space-y-8">

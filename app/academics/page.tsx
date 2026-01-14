@@ -375,7 +375,7 @@ const Academics: React.FC = () => {
                     <li>• Individual student progress tracking</li>
                     <li>• University application guidance</li>
                   </ul>
-                  <div className="flex gap-4">
+                  {/* <div className="flex gap-4">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-green-600 dark:text-green-400">98%</div>
                       <div className="text-sm text-gray-600 dark:text-gray-400">WAEC Pass Rate</div>
@@ -384,7 +384,7 @@ const Academics: React.FC = () => {
                       <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">95%</div>
                       <div className="text-sm text-gray-600 dark:text-gray-400">University Admission</div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <Image
                   src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
@@ -400,7 +400,7 @@ const Academics: React.FC = () => {
       </section>
 
       {/* Facilities Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      {/* <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
@@ -432,7 +432,7 @@ const Academics: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-800 dark:to-blue-900">
