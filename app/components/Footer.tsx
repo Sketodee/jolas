@@ -1,5 +1,6 @@
 import { ArrowRight, BookOpen, GraduationCap, Heart, ImageIcon, LucideIcon, Mail, MapPin, MessageCircle, Phone, Star, Users } from 'lucide-react'
 import Link from 'next/link';
+import Image from 'next/image';
 import React from 'react'
 
 interface NavigationItem {
@@ -31,9 +32,13 @@ const Footer = () => {
             {/* School info with creative design */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg">
-                  <GraduationCap className="w-7 h-7 text-white" />
-                </div>
+                <Image
+                  src="/jolas_logo.png"
+                  alt="Jolas Schools Logo"
+                  width={48}
+                  height={48}
+                  className="rounded-2xl  invert"
+                />
                 <div>
                   <h3 className="text-2xl font-black">Jolas Schools</h3>
                   <p className="text-orange-300 font-semibold"> Nurturing Tomorrow&apos;s Leaders</p>
@@ -46,10 +51,6 @@ const Footer = () => {
               </p>
 
               <div className="space-y-4">
-                {/* <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
-                  <MapPin className="w-5 h-5 text-orange-400 group-hover:scale-110 transition-transform" />
-                  <span>Plot 123, Adeola Odeku Street, Victoria Island, Lagos</span>
-                </div> */}
                 <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
                   <Phone className="w-5 h-5 text-orange-400 group-hover:scale-110 transition-transform" />
                   <span>+234 815 163 1337</span>

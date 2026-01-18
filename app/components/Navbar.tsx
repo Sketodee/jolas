@@ -14,6 +14,7 @@ import {
   LucideIcon
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 interface NavigationItem {
@@ -74,9 +75,13 @@ const Layout: React.FC = () => {
             {/* Creative logo */}
             <Link href={("/")} className="flex items-center gap-4 group">
               <div className="relative">
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 transform group-hover:rotate-6">
-                  <GraduationCap className="w-8 h-8 text-white" />
-                </div>
+                <Image
+                  src="/jolas_logo.png"
+                  alt="Jolas Schools Logo"
+                  width={56}
+                  height={56}
+                  className="rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-300 transform group-hover:rotate-6"
+                />
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-orange-400 rounded-full animate-pulse"></div>
               </div>
               <div className="">
